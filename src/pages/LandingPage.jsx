@@ -123,16 +123,16 @@ const LandingPage = () => {
                     variants={itemVariants}
                     className="text-neutral-400 mt-6 text-lg max-w-lg mx-auto leading-relaxed font-light"
                 >
-                    Pengendalian lengan robot virtual presisi tinggi menggunakan teknologi <span className="text-white font-normal">Hand Gesture Recognition</span> berbasis AI.
+                    Pengendalian Lengan Robot Virtual Menggunakan <span className="text-white font-normal">Hand Gesture Recognition</span>.
                 </motion.p>
 
                 {/* Tombol Aksi */}
-                <motion.div variants={itemVariants} className="mt-12">
+                <motion.div variants={itemVariants} className="mt-10">
                     <Link to="/dashboard">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group relative cursor-pointer inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
+                            className="group relative cursor-pointer inline-flex items-center gap-3 px-8 py-2 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
                         >
                             <span>Start Simulation</span>
                             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
