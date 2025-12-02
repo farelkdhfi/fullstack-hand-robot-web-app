@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Class khusus untuk scrollbar custom */
+  .custom-scrollbar {
+    /* Untuk Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #404040 transparent;
+  }
+
+  /* Lebar Scrollbar (Chrome/Safari/Webkit) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;  /* Vertical scrollbar width */
+    height: 6px; /* Horizontal scrollbar height */
+  }
+
+  /* Track (Jalur Scrollbar) - dibuat transparan agar menyatu */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Thumb (Bagian yang digeser) */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #333333; /* Warna gelap abu-abu (Neutral-800) */
+    border-radius: 20px;       /* Membuat ujungnya bulat (rounded) */
+    border: 1px solid transparent; /* Spacer agar tidak terlalu mepet tepi */
+    background-clip: content-box;
+  }
+
+  /* Efek saat Hover di scrollbar */
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #525252; /* Sedikit lebih terang saat dihover (Neutral-600) */
+  }
+}
