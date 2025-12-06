@@ -44,7 +44,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
     await websocket.send_text(json.dumps({
         "landmarks": [], 
-        "logs": [{"time": "SYSTEM", "type": "SYSTEM", "message": "Backend Pro Loaded. Ready."}]
+        "logs": [{"time": "SYSTEM", "type": "SYSTEM", "message": "Backend Loaded. Ready."}]
     }))
 
     while True:
@@ -167,17 +167,17 @@ async def websocket_endpoint(websocket: WebSocket):
                     response["confidence"] = 95
                     response["fingerTip"] = {"x": lms.landmark[8].x, "y": lms.landmark[8].y, "z": lms.landmark[8].z}
                     
-                    # Sync smoothing variable biar pas switch mode gak loncat
+                    # Sync smoothing variable biar pas switch mode tidak loncat
                     prev_x, prev_y = response["fingerTip"]["x"], response["fingerTip"]["y"]
 
-                    # --- FIX LOGGING MODE AI (INI YANG TADI HILANG) ---
+                    # --- LOGGING MODE AI ---
                     if response["gesture"] != prev_gesture:
                         log_type = "SUCCESS" if response["gesture"] == "GRIPPING" else "NEUTRAL"
                         log(log_type, f"AI Detect: {response['gesture']}")
                         prev_gesture = response["gesture"]
 
             # =========================================================
-            # MODE 2: MANUAL PRO (Upgrade)
+            # MODE 2: MANUAL
             # =========================================================
             elif current_mode == "MANUAL":
                 blurred = cv2.GaussianBlur(img, (7, 7), 0)
