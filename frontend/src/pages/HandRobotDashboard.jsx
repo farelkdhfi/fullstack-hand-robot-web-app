@@ -14,10 +14,6 @@ import { useVoiceCommand } from '../utils/useVoiceCommand';
 import Hand2D from '../components/Hand2D';
 import { fadeInUp, scaleIn, staggerContainer } from '../utils/variantAnimation';
 
-// --- VARIANT ANIMASI ---
-
-
-// --- 7. DASHBOARD UTAMA (PYTHON INTEGRATED) ---
 const HandRobotDashboard = () => {
   const webcamRef = useRef(null);
   const overlayCanvasRef = useRef(null);
@@ -40,8 +36,7 @@ const HandRobotDashboard = () => {
     fingerTip: { x: 0, y: 0, z: 0 }
   });
 
-  // Ambil variabel lastHeard juga
-  const { voiceGripping, listeningStatus, lastHeard } = useVoiceCommand(algorithmMode === 'MANUAL');
+  const { voiceGripping, lastHeard } = useVoiceCommand(algorithmMode === 'MANUAL');
 
   const isEffectiveGripping = useMemo(() => {
     if (algorithmMode === 'AI') {

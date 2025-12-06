@@ -7,7 +7,7 @@ const Hand2D = ({
   fingerTip = { x: 0.5, y: 0.5 }, // Default ke tengah layar jika data kosong
   isManual = false 
 }) => {
-    
+
   // --- STATE FISIKA (Data gedung) ---
   const [cubes, setCubes] = useState([
     { id: 1, x: 0.2, y: 0.5, width: 0.12, height: 0.25, color: '#fee685', velocityY: 0 },
@@ -52,7 +52,7 @@ const Hand2D = ({
         if (hasHand && gesture === 'GRIPPING') {
           if (heldCubeId.current === null) {
 
-            // Ubah initial distance jadi Infinity biar pasti ketemu
+            // initial distance Infinity biar pasti ketemu
             let closestDist = Infinity;
             let targetId = null;
 
@@ -141,7 +141,7 @@ const Hand2D = ({
 
     animationFrameId = requestAnimationFrame(updatePhysics);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [gesture, landmarks, fingerTip, isManual]); // Dependency penting!
+  }, [gesture, landmarks, fingerTip, isManual]);
 
   // --- HELPER RENDER JENDELA GEDUNG ---
   const renderWindows = (cube) => {
