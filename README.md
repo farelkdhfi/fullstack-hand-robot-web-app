@@ -50,3 +50,74 @@ Pastikan perangkat Anda sudah terinstall:
 git clone [https://github.com/farelkdhfi/fullstack-hand-robot-web-app.git](https://github.com/farelkdhfi/fullstack-hand-robot-web-app.git)
 ```
 cd fullstack-hand-robot-web-app
+
+### 2. Setup Backend
+Buka terminal di vscode, masuk ke folder backend dan install dependensi Python.
+
+* **Masuk ke direktori backend**
+  ketik di terminal:
+  ```mark
+  cd backend
+  ```
+
+* **(Opsional tapi disarankan) Buat Virtual Environment**
+  ```bash
+  python -m venv venv
+  ```
+
+* **Aktifkan Virtual Environment**
+  - Windows:
+  ```bash
+  venv\Scripts\activate
+  ```
+  - Mac/Linux:
+  ```bash
+  source venv/bin/activate
+  ```
+* **Install Library yang dibutuhkan**
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Setup Frontend
+Buka terminal baru, masuk ke folder frontend dan install dependensi Node.js.
+
+* **Buka terminal baru, dan ketik ini di terminal untuk masuk ke direktori frontend:**
+```bash
+cd frontend
+```
+* **Install packages**
+```bash
+npm install
+```
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi (Running)
+Untuk menjalankan sistem, Anda perlu membuka dua terminal secara bersamaan.
+
+* **Terminal 1: Backend Server**
+- Pastikan Anda berada di folder backend dan virtual environment aktif (jika ada).
+```bash
+python backend.py
+```
+Tunggu hingga muncul pesan: Uvicorn running on http://0.0.0.0:8000
+
+* **Terminal 2: Frontend Client**
+- Pastikan Anda berada di folder frontend.
+```bash
+npm run dev
+```
+Buka browser (Chrome/Edge) dan akses alamat lokal yang muncul (http://localhost:5173).
+
+---
+
+## 📖 Panduan Penggunaan
+* **Akses Kamera:** Izinkan browser mengakses webcam saat diminta.
+
+* **Pilih Mode Algoritma:**
+- Mode AI (Default): Langsung arahkan tangan ke kamera. Dekatkan jari telunjuk dan jempol untuk melakukan GRIPPING (mengambil kotak). Jauhkan jari untuk melepas.
+
+- Mode Manual: Klik tombol "ALGO: AI" untuk ganti ke "MANUAL". Klik tombol "CALIBRATE SKIN", letakkan tangan di kotak hijau, dan tunggu proses sampling warna selesai. Untuk melakukan grip pada crane cukup mengucapkan instruksi 'LOCK / CLOSE / GRAB / UP' dan untuk melepaskan 'DROP / RELEASE / OPEN'
+
+- Misi: Pindahkan Kubus Kuning ke zona kuning, dan Kubus Putih ke zona putih untuk mendapatkan skor.
