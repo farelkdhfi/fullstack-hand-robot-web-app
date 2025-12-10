@@ -12,7 +12,12 @@ app = FastAPI()
 
 # --- KONFIGURASI MEDIAPIPE (AI) ---
 mp_hands = mp.solutions.hands
-hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
+hands = mp_hands.Hands(
+    max_num_hands=1, 
+    model_complexity=0, 
+    min_detection_confidence=0.6, 
+    min_tracking_confidence=0.6
+)
 
 # --- KONFIGURASI MANUAL CV (DEFAULT) ---
 # Nilai awal (bisa berubah kalau dikalibrasi)
@@ -84,6 +89,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 nparr = np.frombuffer(img_bytes, np.uint8)
                 img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
                 if img is None: continue
+                img = cv2.resize(img, (320, 240))
             except: continue
 
             response = {
