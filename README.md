@@ -48,5 +48,5 @@ Pastikan perangkat Anda sudah terinstall:
 
 ```bash
 git clone [https://github.com/farelkdhfi/fullstack-hand-robot-web-app.git](https://github.com/farelkdhfi/fullstack-hand-robot-web-app.git)
-
+```
 cd fullstack-hand-robot-web-app
