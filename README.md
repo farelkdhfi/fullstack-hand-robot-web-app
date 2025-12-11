@@ -120,4 +120,4 @@ Buka browser (Chrome/Edge) dan akses alamat lokal yang muncul (http://localhost:
 
 - Mode Manual: Klik tombol "ALGO: AI" untuk ganti ke "MANUAL". Klik tombol "CALIBRATE SKIN", letakkan tangan di kotak hijau, dan tunggu proses sampling warna selesai. Untuk melakukan grip pada crane cukup mengucapkan instruksi 'LOCK / CLOSE / GRAB / UP' dan untuk melepaskan 'DROP / RELEASE / OPEN'
 
-- Misi: Pindahkan Kubus Kuning ke zona kuning, dan Kubus Putih ke zona putih untuk mendapatkan skor.
+- Misi: Pindahkan Kubus Kuning ke zona kuning, dan Kubus Putih ke zona putih.
